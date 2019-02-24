@@ -2,6 +2,7 @@ package algorithms;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,7 +13,10 @@ public class SegmentedLeastSquares {
     public static void main(String[] args) {
 
 
-        String path = "C:\\Users\\og4428\\Google Drive\\Orhun\\Terms\\Spring 2018\\CS333 - Algorithm Analysis\\HW2\\Points.txt";
+       // String path = "C:\\Users\\og4428\\Google Drive\\Orhun\\Terms\\Spring 2018\\CS333 - Algorithm Analysis\\HW2\\Points.txt";
+        String path = "";
+        path = getCurrentPath();
+        path += "\\Points.txt";
 
         ArrayList<Double> x = new ArrayList();
         ArrayList<Double> y = new ArrayList();
@@ -32,6 +36,24 @@ public class SegmentedLeastSquares {
 
 
 
+
+
+    }
+
+    public static String getCurrentPath() {
+
+        String currentpath = "";
+
+        String current = "";
+        try {
+            currentpath = new java.io.File(".").getCanonicalPath();
+            String currentDir = System.getProperty("user.dir");
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+
+        return currentpath;
     }
 
     public static void readTxt(String path, ArrayList<Double> x, ArrayList<Double> y) {
