@@ -12,8 +12,6 @@ public class SegmentedLeastSquares {
 
     public static void main(String[] args) {
 
-
-       // String path = "C:\\Users\\og4428\\Google Drive\\Orhun\\Terms\\Spring 2018\\CS333 - Algorithm Analysis\\HW2\\Points.txt";
         String path = "";
         path = getCurrentPath();
         path += "\\Points.txt";
